@@ -62,7 +62,7 @@ void PrintArray(vector<int> a)
 
 int main()
 {
-    vector<int> a = GenArray();
+    vector<int> a = {0,1,2,1,0,2};
     a[0] = 0;
     PrintArray(a);
     DutchNationalFlag(a);

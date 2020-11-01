@@ -31,24 +31,29 @@ Q10. Minimum no. of Jumps to reach end of an array [LINK](https://practice.geeks
 
 ---
 Q11. find duplicate in an array of N+1 Integers [LINK](https://leetcode.com/problems/find-the-duplicate-number/)
+> Done. Floyd's algo. and simple approach.
 
 ---
 Q12. Merge 2 sorted arrays without using Extra space. [LINK](https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays5135/1)
 
 ---
 Q13. Kadane's Algo [V.V.V.V.V IMP] [LINK](https://practice.geeksforgeeks.org/problems/kadanes-algorithm/0)
+> done.
 
 ---
-Q14. Merge Intervals [LINK](https://leetcode.com/problems/merge-intervals/)
+Q14. Merge Intervals [LINK](https://leetcode.com/problems/merge-intervals/) 
+> done
 
 ---
 Q15. Next Permutation [LINK](https://leetcode.com/problems/next-permutation/)
+>done. vvvimportant [LINK_TO_VIDEO](https://www.youtube.com/watch?v=quAS1iydq7U)
 
 ---
 Q16. Count Inversion [LINK](https://practice.geeksforgeeks.org/problems/inversion-of-array/0)
 
 ---
 Q17. Best time to buy and Sell stock [LINK](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+> done
 
 ---
 Q18. find all pairs on integer array whose sum is equal to given number [LINK](https://practice.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1)
