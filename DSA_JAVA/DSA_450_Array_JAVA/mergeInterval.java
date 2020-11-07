@@ -8,13 +8,12 @@ class Solution {
         
         int n=arr.length;
         
-        Arrays.sort(arr, new Comparator<int[]>()
+        Arrays.sort(arr, new Comparator<int[]>(){
+            @Override
+            public int compare(int a[],int b[])
             {
-                @Override
-                public int compare(int a[],int b[])
-                {
-                    return Integer.compare(a[0],b[0]);
-                }
+               return Integer.compare(a[0],b[0]);
+            }
             });
         
         Stack<Pair>st=new Stack<>();

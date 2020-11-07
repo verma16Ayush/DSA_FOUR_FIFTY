@@ -1,0 +1,29 @@
+class Solution
+{
+    ArrayList<Integer> commonElements(int A[], int B[], int C[], int n1, int n2, int n3) 
+    {
+        int a=0,b=0,c=0;
+                
+                
+                SortedSet<Integer>set=new TreeSet<>();
+                while(a<n1&&b<n2&&c<n3)
+                {
+                    int min = Math.min(A[a],Math.min(B[b],C[c]));
+                    
+                    if(A[a]==min&&B[b]==min&&C[c]==min)
+                    {set.add(min);++a;++b;++c;}
+                    else
+                    {
+                        if(A[a]==min)
+                        ++a;
+                        if(B[b]==min)
+                        ++b;
+                        if(C[c]==min)
+                        ++c;
+                    }
+                    
+                }
+                ArrayList<Integer> al=new ArrayList<>(set);
+                return al;
+    }
+}
