@@ -57,15 +57,16 @@ Q17. Best time to buy and Sell stock [LINK](https://leetcode.com/problems/best-t
 
 ---
 Q18. find all pairs on integer array whose sum is equal to given number [LINK](https://practice.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1)
-
+> Done
 ---
 Q19. find common elements In 3 sorted arrays [LINK](https://practice.geeksforgeeks.org/problems/common-elements1132/1)
-
+> done
 ---
 Q20. Rearrange the array in alternating positive and negative items with O(1) extra space [LINK](https://www.geeksforgeeks.org/rearrange-array-alternating-positive-negative-items-o1-extra-space/)
 
 ---
 Q21. Find if there is any subarray with sum equal to 0 [LINK](https://practice.geeksforgeeks.org/problems/subarray-with-0-sum/0)
+> Done
 
 ---
 Q22. Find factorial of a large number [LINK](https://practice.geeksforgeeks.org/problems/factorials-of-large-numbers/0)

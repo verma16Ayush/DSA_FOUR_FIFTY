@@ -21,7 +21,7 @@ void Reverse(vector<int>& a, int st, int en)
 {
     /**
      * @param - a = array, st = start index, en = end index, reverses the array in place from [st, en]
-     **/
+    **/
     
     int half = st + ((en+1) - st) / 2;
     int endCount = en;
@@ -36,7 +36,7 @@ void Reverse(vector<int>& a, int st, int en)
 
 void NextPerm(vector<int>& a)
 {
-    int k = 0;
+    int k = -1;
 
     for (int i = 0; i < a.size() - 1; i++)
     {
@@ -63,17 +63,9 @@ void NextPerm(vector<int>& a)
 int main()
 {
     int n;
-    vector<int> a;
-    cin >> n;
-    a.reserve(n);
-
-    for (int i = 0; i < n; i++)
-    {
-        int t;
-        cin >> t;
-        a.push_back(t);
-    }
-
+    vector<int> a = {6, 2, 1, 5, 4, 3, 0};
+    // cin >> n;
+    // a.reserve(n);
     NextPerm(a);
-    
+    return 0;
 }

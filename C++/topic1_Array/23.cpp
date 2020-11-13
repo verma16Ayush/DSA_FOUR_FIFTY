@@ -1,8 +1,8 @@
 /** 
  *
  * @author - Ayush
- * @title - 21.cpp
- * @createdOn - 2020-11-09 21:24 Hrs
+ * @title - 23.cpp
+ * @createdOn - 2020-11-09 23:34 Hrs
  * 
  **/
 #include <iostream>
@@ -23,7 +23,6 @@ int main()
     cin >> n;
     vector<int> a;
     a.reserve(n);
-
     for (int i = 0; i < n; i++)
     {
         int temp;
@@ -31,27 +30,16 @@ int main()
         a.push_back(temp);
     }
 
-    map<int, int> hm;
+    int max_prod = a[0];
+    int max_so_far = a[0];
 
-    hm[0] = 1;
-    int sum = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
-        sum += a[i];
-        if(hm[sum])
-        {
-            cout << "YES" << endl;
-            return 0;
-        }
-        else
-        {
-            hm[sum] = 1;
-        }
+        max_so_far = max(a[i], a[i] * max_prod);
+        max_prod = (a[i], max_so_far);
     }
-    
-    cout << "NO" << endl;
 
 
     return 0;
-     
+    
 }

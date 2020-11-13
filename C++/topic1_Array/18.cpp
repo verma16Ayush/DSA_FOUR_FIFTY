@@ -1,8 +1,8 @@
 /** 
  *
  * @author - Ayush
- * @title - 21.cpp
- * @createdOn - 2020-11-09 21:24 Hrs
+ * @title - 18.cpp
+ * @createdOn - 2020-11-09 19:07 Hrs
  * 
  **/
 #include <iostream>
@@ -21,37 +21,43 @@ int main()
 {
     int n;
     cin >> n;
-    vector<int> a;
-    a.reserve(n);
+    int sum;
+    cin >> sum;
+    map<int, int> a;
+    vector<int> array;
 
     for (int i = 0; i < n; i++)
     {
         int temp;
         cin >> temp;
-        a.push_back(temp);
+        array.push_back(temp);
     }
 
-    map<int, int> hm;
-
-    hm[0] = 1;
-    int sum = 0;
     for (int i = 0; i < n; i++)
     {
-        sum += a[i];
-        if(hm[sum])
+        int temp;
+        temp = array[i];
+        if(a[temp])
         {
-            cout << "YES" << endl;
-            return 0;
+            a[temp]++;
         }
         else
         {
-            hm[sum] = 1;
+            a[temp] = 1;
         }
     }
-    
-    cout << "NO" << endl;
 
+    int count = 0;
+    for(int i = 0; i < n; i++)
+    {
+        if(a[sum - array[i]])
+        {
+            count += a[sum - array[i]];
+        }
 
+        if(array[i] == sum - array[i]) count--;
+    }
+
+    cout << count / 2 << "\n";
     return 0;
-     
 }
