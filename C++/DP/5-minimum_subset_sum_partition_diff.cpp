@@ -1,8 +1,8 @@
 /** 
  *
  * @author - Ayush
- * @title - subset_sum.cpp
- * @createdOn - 2021-01-20 00:15 Hrs
+ * @title - 5-minimum_subset_sum_partition_diff.cpp
+ * @createdOn - 2021-01-20 20:47 Hrs
  * 
  **/
 #include <iostream>
@@ -29,12 +29,14 @@ ll PowModulo(ll a, ll b)
     return res;
 }
 
-int dp[1001][101];
-//  dp[nume][sum];
-bool SubsetSumTab(vector<int>& a, int n, int sum)
+int dp[101][101];
+
+//dp[size][sum];
+
+int SubsetSum(vector<int> a, int n, int sum)
 {
-    for(int i = 0; i <= 1000; i++) dp[i][0] = 1;
-    for(int i = 1; i <= 100; i++) dp[0][i] = 0;
+    for(int i = 0; i <= sum; i++) dp[0][i] = 0;
+    for(int i = 0; i <= n; i++) dp[i][0] = 1;
 
     for(int i = 1; i <= n; i++)
     {
@@ -47,18 +49,22 @@ bool SubsetSumTab(vector<int>& a, int n, int sum)
             else dp[i][j] = dp[i - 1][j];
         }
     }
-    return dp[n][sum];
-}
-int i = 0;
+    vector<int> v;
 
-bool SubsetSum(vector<int>& a, int n, int sum)
-{
-    if(dp[sum][n] != -1) return dp[sum][n];
-    if(sum == 0) return dp[sum][n] = 1;
-    if(sum && n == 0) return dp[sum][n] = 0;
-    if(a[n - 1] <= sum) return dp[sum][n] = (SubsetSum(a, n - 1, sum - a[n - 1]) || SubsetSum(a, n - 1, sum));
-    return dp[sum][n] = SubsetSum(a, n - 1, sum);
+    for(int i = 0; i <= sum / 2; i++)
+    {
+        if(dp[n][i]) v.push_back(i);
+    }
+    int m = INT32_MAX;
+    for(int i : v)
+    {
+        m = min(m, sum - 2 * i);
+    }
+
+    return m;
 }
+
+
 
 int main()
 {
@@ -73,14 +79,16 @@ int main()
     while(tc--)
     {
         int n;
-        int sum;
         cin >> n;
-        cin >> sum;
         vector<int> a(n);
-        for(int& i : a) cin >> i;
+        int sum = 0;
+        for(int& i : a)
+        {
+            cin >> i;
+            sum += i;
+        }
         memset(dp, -1, sizeof(dp));
         cout << SubsetSum(a, n, sum) << nl;
-        // cout << i << nl;
     }
     return 0;
 }

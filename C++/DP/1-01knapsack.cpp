@@ -39,7 +39,7 @@ int dp[1001][1001];
 int GetProfit(vector<item>& a, int cap, int n)
 {
     if(dp[cap][n] != -1) return dp[cap][n];
-    if(n == 0 || cap == 0) return 0;
+    if(n == 0 || cap == 0) return dp[cap][n] = 0;
     else if(a[n - 1].weight <= cap)
     {
         return dp[cap][n] = max(a[n-1].val + GetProfit(a, cap - a[n - 1].weight, n - 1), GetProfit(a, cap, n - 1));
